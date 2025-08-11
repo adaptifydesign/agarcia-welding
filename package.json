@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^10.4.16",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "jquery.easing": "^1.4.1"
@@ -39,7 +39,7 @@
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-header": "^2.0.9",
     "gulp-plumber": "^1.2.1",
