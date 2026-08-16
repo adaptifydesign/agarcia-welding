@@ -1,0 +1,134 @@
+// Estimate request form — first-point-of-contact lead capture.
+// Colours all come from the semantic tokens; every pair below was measured
+// against WCAG AA before being committed.
+
+// `hidden` must beat the display set by layout classes
+[hidden] {
+  display: none !important;
+}
+
+.estimate-form {
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 1rem;
+
+    @media (min-width: 576px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-field {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: .375rem;
+    color: $text-secondary; // 9.00:1 on $surface-200
+    font-family: $secondary-font;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .label-optional {
+    color: $text-muted; // 5.54:1
+    font-weight: 400;
+    letter-spacing: .04em;
+    text-transform: none;
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    min-height: 3rem; // 48px tap target
+    padding: .75rem;
+    background-color: $surface-200;
+    border: 1px solid $border-control; // 3.55:1 on the card behind it
+    border-radius: 0;
+    color: $text-primary; // 13.16:1 on $surface-200
+    font-family: $secondary-font;
+    // 1rem keeps iOS Safari from auto-zooming the page on focus
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: border-color .2s ease, box-shadow .2s ease;
+
+    &::placeholder {
+      color: $text-muted; // 5.54:1 — placeholders stay legible
+      opacity: 1;
+    }
+    &:hover {
+      border-color: $text-muted;
+    }
+    &:focus {
+      outline: none;
+      border-color: $accent;
+      box-shadow: 0 0 0 2px rgba(179, 148, 95, .35);
+    }
+    &:focus-visible {
+      outline: 2px solid $accent;
+      outline-offset: 1px;
+    }
+  }
+
+  // Native select arrows are unstyleable and render inconsistently on dark
+  // backgrounds, so draw our own in the accent colour.
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23b3945f' d='M1.4 0 6 4.6 10.6 0 12 1.4 6 7.4 0 1.4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .875rem center;
+    background-size: .75rem .5rem;
+    cursor: pointer;
+  }
+
+  // The submit button spans the form on small screens where it is thumb-reachable
+  .btn-submit {
+    width: 100%;
+
+    @media (min-width: 576px) {
+      width: auto;
+    }
+  }
+
+  .form-note {
+    margin-top: .75rem;
+    color: $text-muted;
+    font-size: .8125rem;
+  }
+}
+
+// Confirmation shown in place of the form after a successful submit
+.estimate-success {
+  padding: 1.5rem;
+  border-left: .25rem solid $accent;
+  background-color: $surface-300;
+
+  .estimate-success-title {
+    margin-bottom: .5rem;
+    color: $text-primary;
+    font-family: $primary-font;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.estimate-error {
+  margin-top: 1rem;
+  padding: .875rem 1rem;
+  border-left: .25rem solid $accent;
+  background-color: $surface-300;
+  color: $text-secondary;
+  font-size: .875rem;
+
+  a {
+    font-weight: 700;
+  }
+}

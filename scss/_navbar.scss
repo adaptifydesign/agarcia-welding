@@ -1,9 +1,9 @@
 /* mobile style */
 #mainNav {
   min-height: 56px;
-  background-color: $primary-dark-300;
+  background-color: $surface-300;
   border-radius: 0;
-  border-bottom: 1px solid $primary-dark-700;
+  border-bottom: 1px solid $surface-700;
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4) !important;
 
   .nav-svg {
@@ -12,35 +12,35 @@
 
   .navbar {
     padding: 0rem;
-  } 
+  }
   .navbar-toggler {
     padding: 0;
-    color: $secondary;
+    color: $accent-hi;
     border: none;
     border-radius: 0;
     &:focus {
       outline: none;
     &:hover {
-      color: $secondary;
+      color: $accent-hi;
       border: none;
     }
     }
   }
   .navbar-brand {
-    color: darken($white, 20%);
+    color: $text-secondary;
     font-weight: 700;
     padding: 0;
   }
 }
 .navbar-dark .navbar-nav .nav-link {
     transition: 0.5s;
-    color: darken($white, 20%);
+    color: $text-secondary; // 8.27:1 on $surface-300
     padding: 1rem 1rem;
     &:hover{
-      color: $secondary;
+      color: $accent-hi;
     }
 }
 
 .navbar-dark .navbar-nav .nav-link.active {
-  color: $secondary;
+  color: $accent-hi;
 }

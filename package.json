@@ -1,52 +1,65 @@
 {
-  "title": "Grayscale",
-  "name": "startbootstrap-grayscale",
-  "version": "5.0.8",
-  "scripts": {
-    "start": "gulp watch"
-  },
-  "description": "A grayscale one page HTML theme for Bootstrap.",
+  "title": "A.Garcia Welding",
+  "name": "agarcia-welding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing site for A.Garcia Welding — custom wrought iron gates, fences, railings and furniture serving Temecula Valley and Riverside County.",
   "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive",
-    "theme",
-    "template"
+    "welding",
+    "wrought iron",
+    "gates",
+    "fences",
+    "railings",
+    "temecula",
+    "murrieta",
+    "riverside county"
   ],
-  "homepage": "https://startbootstrap.com/template-overviews/grayscale",
-  "bugs": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale/issues",
-    "email": "feedback@startbootstrap.com"
-  },
+  "homepage": "https://agarciawelding.com",
   "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BlackrockDigital/startbootstrap-grayscale.git"
+  "author": "A.Garcia Welding",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "icons": "node scripts/generate-icons.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.1",
-    "autoprefixer": "^9.7.4",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "jquery.easing": "^1.4.1"
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.7.1",
+    "jquery.easing": "^1.4.1",
+    "lity": "^2.4.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
+    "autoprefixer": "^10.5.4",
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^10.0.0",
     "gulp-clean-css": "^4.3.0",
-    "gulp-header": "^2.0.9",
+    "gulp-header": "^2.0.12",
     "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^5.1.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
-    "merge-stream": "^2.0.0"
+    "sass": "^1.77.0",
+    "sharp": "^0.35.3"
   },
-  "main": "gulpfile.js"
+  "engines": {
+    "node": ">=20.19"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "comments": {
+    "overrides": "Dev-only advisory fixes for transitive deps that browser-sync 3.0.4 still pins to old lines. All are same-major patch bumps. The version selectors on the keys keep these scoped to the stale copies -- gulp 5 ships its own newer picomatch/brace-expansion that must not be downgraded.",
+    "immutable": "NOT overridden on purpose. browser-sync pins immutable ^3, and the advisory (GHSA, DoS) is only cleared by 4.3.9+. Forcing ^4 breaks browser-sync at startup -- 'TypeError: server.get is not a function' -- because Immutable 4 changed the fromJS() reviver signature, so browser-sync's options tree comes back as Seqs instead of Maps. Left as a known, accepted dev-only advisory until browser-sync migrates upstream."
+  },
+  "overrides": {
+    "socket.io": "^4.8.3",
+    "lodash": "^4.18.1",
+    "follow-redirects": "^1.16.0",
+    "minimatch@^3": "^3.1.5",
+    "picomatch@^2": "^2.3.2",
+    "brace-expansion@^1": "^1.1.18"
+  }
 }

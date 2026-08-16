@@ -1,36 +1,101 @@
-// colors
+// ===========================================================================
+// DESIGN TOKENS — "heritage forge" dark UI
+//
+//   Tier 1  brand palette   raw values; components should not use these
+//   Tier 2  semantic tokens what components reference
+//   Tier 3  legacy aliases  keeps older component code compiling
+//
+// Every foreground/background pair used in the UI is verified against
+// WCAG 2.1 AA (4.5:1 for text, 3:1 for interactive boundaries). Measured
+// ratios are noted inline — if you retune a value, re-check its partner.
+// ===========================================================================
 
-$white: #fff !default;
-$black: #222 !default;
-$primary: #c9983d !default;
-$secondary: lighten($primary, 25%) !default;
 
-// buttons
+// --- Tier 1: brand palette -------------------------------------------------
 
-$btn-prm: #ad7600 !default;
-$btn-scn: #d49941 !default;
+$forged-charcoal: #1f1d19 !default; // warm near-black; base of the dark UI
+$antique-brass:   #b3945f !default; // primary accent
+$parchment:       #e9e3d6 !default; // primary text
+$walnut:          #6b563b !default; // tertiary, structural warmth
 
-$gray-100: lighten(#444, 90%) !default;
-$gray-200: lighten(#444, 80%) !default;
-$gray-300: lighten(#444, 70%) !default;
-$gray-400: lighten(#444, 60%) !default;
-$gray-500: lighten(#444, 50%) !default;
-$gray-600: lighten(#444, 40%) !default;
-$gray-700: lighten(#444, 30%) !default;
-$gray-800: lighten(#444, 20%) !default;
-$gray-900: lighten(#444, 10%) !default;
 
-$primary-dark-100: darken($primary, 50%) !default;
-$primary-dark-200: darken($primary, 45%) !default;
-$primary-dark-300: darken($primary, 40%) !default;
-$primary-dark-400: darken($primary, 35%) !default;
-$primary-dark-500: darken($primary, 30%) !default;
-$primary-dark-600: darken($primary, 25%) !default;
-$primary-dark-700: darken($primary, 20%) !default;
-$primary-dark-800: darken($primary, 15%) !default;
-$primary-dark-900: darken($primary, 10%) !default;
+// --- Tier 2a: surfaces -----------------------------------------------------
+// Dark-mode elevation: higher number = lighter = more raised. Kept at low
+// saturation off hue 36 so surfaces read as forged charcoal, not brown.
 
-// fonts
+$surface-100: #191715 !default; // recessed
+$surface-200: #1f1d19 !default; // page background (= $forged-charcoal)
+$surface-300: #272420 !default; // raised — navbar, cards
+$surface-400: #302c27 !default;
+$surface-500: #38342e !default;
+$surface-600: #433e37 !default; // hairline dividers (decorative)
+$surface-700: #4f4940 !default; // borders (decorative)
+$surface-800: #5d564c !default;
+$surface-900: #6b6357 !default;
+
+
+// --- Tier 2b: foreground ---------------------------------------------------
+
+$text-primary:   $parchment !default; // 13.16:1 on $surface-200 — headings
+$text-secondary: #c4bdae    !default; //  9.00:1 — body copy
+$text-muted:     #9c9384    !default; //  5.54:1 — captions, quiet nav states
+
+
+// --- Tier 2c: accents ------------------------------------------------------
+
+$accent:    $antique-brass !default; // 5.86:1 as text on $surface-200
+$accent-hi: #c9ab77        !default; // 7.67:1 — hover, brighter fills
+$accent-lo: #a3834e        !default; // pressed state
+$tertiary:  $walnut        !default; // structural warm accent
+
+// Boundary colour for interactive controls (inputs, selects). WCAG 1.4.11
+// asks for 3:1 against adjacent colours; the $surface-* dividers are
+// decorative and deliberately sit below that, so controls need their own.
+$border-control: #81786a !default; // 3.87:1 on $surface-200, 3.55:1 on $surface-300
+
+// Foreground for anything sitting ON an accent fill.
+// Deliberately NOT white: white on brass measures 2.49:1 and fails AA.
+// Charcoal on brass is 5.86:1 and stays >= 4.74:1 across every button state.
+$on-accent: $surface-200 !default;
+
+
+// --- Tier 3: legacy aliases ------------------------------------------------
+// Pre-existing components reference these names. They now resolve to the
+// semantic tokens above, so the palette is retuned from one place.
+
+$primary:   $accent      !default;
+$secondary: $accent-hi   !default; // link text — needs the brighter step
+$black:     $surface-100 !default;
+$white:     $text-primary !default; // "white" here means primary foreground
+
+// Button fills
+$btn-prm: $accent    !default;
+$btn-scn: $accent-hi !default;
+
+// Surface ramp aliases (higher = lighter, matching the previous scale)
+$primary-dark-100: $surface-100 !default;
+$primary-dark-200: $surface-200 !default;
+$primary-dark-300: $surface-300 !default;
+$primary-dark-400: $surface-400 !default;
+$primary-dark-500: $surface-500 !default;
+$primary-dark-600: $surface-600 !default;
+$primary-dark-700: $surface-700 !default;
+$primary-dark-800: $surface-800 !default;
+$primary-dark-900: $surface-900 !default;
+
+// Neutral ramp — warm greys, same family as the brand
+$gray-100: #f2efe9 !default;
+$gray-200: #ded9cf !default;
+$gray-300: #c4bdae !default;
+$gray-400: #a9a190 !default;
+$gray-500: #8e8676 !default;
+$gray-600: #736c5e !default;
+$gray-700: #585247 !default;
+$gray-800: #3d3830 !default;
+$gray-900: #221f1a !default;
+
+
+// --- Typography ------------------------------------------------------------
 
 $primary-font: 'Barlow Condensed', sans-serif !default;
 $secondary-font: 'Open Sans', sans-serif !default;

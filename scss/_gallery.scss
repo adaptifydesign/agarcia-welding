@@ -2,21 +2,9 @@
 .gallery {
 
   .ul, .row{
-    color: #fff;
+    color: $text-primary;
     list-style: none;
-    background-color: $primary-dark-400;
-  }
-
-  .col-md {
-    &:hover {
-      background: $primary;
-      color: #fff;
-    }
-  }
-
-  .active {
-    background: $primary;
-    color: #fff;
+    background-color: $surface-400;
   }
 
   ul {
@@ -25,10 +13,41 @@
   }
 
   ul li {
-
     transition: all .5s ease;
-    color: #fff;
+    color: $text-primary;
+  }
+
+  // Real buttons so the filters are reachable by keyboard and announced
+  // as pressed/unpressed. The fill lives on the button (not the li) so the
+  // selected state actually paints — an earlier `.gallery-filter` rule set
+  // background:transparent and, at equal specificity, silently won over the
+  // `.active` fill.
+  .gallery-filter {
+    display: block;
+    width: 100%;
     padding: 4px 0;
+    background: transparent;
+    border: 0;
+    color: $text-secondary;
+    font-family: $primary-font;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .0625em;
+    cursor: pointer;
+    transition: background-color .3s ease, color .3s ease;
+
+    &:hover {
+      background: $accent;
+      color: $on-accent; // 5.86:1
+    }
+    &.active {
+      background: $accent;
+      color: $on-accent;
+    }
+    &:focus-visible {
+      outline: 2px solid $accent-hi;
+      outline-offset: -2px;
+    }
   }
 
   .ul li:nth-of-type(3), 
@@ -58,8 +77,17 @@
         overflow: hidden !important;
       }
     }
+    // Each tile is an anchor to the full-size photo, so the images stay
+    // crawlable and openable without JavaScript.
     .images {
+      display: block;
       overflow: hidden;
+      line-height: 0;
+
+      &:focus-visible {
+        outline: 2px solid $accent-hi;
+        outline-offset: -2px;
+      }
     }
   }
 }

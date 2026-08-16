@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'navbar.scss';
+@import 'masthead.scss';
+@import 'interactions.scss';
+@import 'about.scss';
+@import 'projects.scss';
+@import 'contact.scss';
+@import 'animations.scss';
+@import 'gallery.scss';
+@import 'form.scss';
+@import 'sticky-call.scss';
+@import 'el-castillo-design-system.scss';
+
+/* * {
+  margin: 0;
+  padding: 0;
+  border: solid red .25px;
+  box-sizing: border-box;
+} */
+
+// Tell the browser this is a dark UI so form controls, scrollbars and
+// spellcheck underlines are rendered with native dark styling too.
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: $surface-200;
+  color: $text-secondary;
+  p {
+  font-family: $secondary-font;
+  font-size: .875rem;
+  color: $text-secondary !important; // 9.00:1 on $surface-200
+  letter-spacing: 0.0625em;
+  line-height: 1.5rem;
+  }
+  p.tagline {
+    color: $text-primary !important;
+  }
+}
+
+// Kept for the existing markup; now parchment-based rather than pure white
+.text-white-75 {
+  color: $text-secondary !important;
+}
+
+@for $i from 1 through 4 {
+  h#{5 - $i} {
+      color: $text-primary;
+      font-size: $i * 1rem;
+      font-family: $primary-font;
+      font-weight: 400;
+      line-height: $i * 1rem + .375rem;
+      text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @for $i from 1 through 4 {
+    h#{5 - $i} {
+        color: $text-primary;
+        font-size: $i * .75rem;
+        font-family: $primary-font;
+        font-weight: 400;
+        line-height: $i * .75rem + .25rem;
+        text-transform: uppercase;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    height: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: $surface-200;
+    border-bottom: 1px solid $surface-700;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4) !important;
+    .navbar-brand {
+    padding: .5rem 0;
+    color: $text-secondary;
+      &:hover{
+        color: $accent-hi;
+      }
+    }
+  }
+  #mainNav .nav-link {
+    transition: none;
+    padding: 1rem 1.5rem .8rem 1.5rem;
+    color: $text-secondary;
+    border-bottom: 0.25rem solid transparent;
+    transition: .5s;
+  }
+  #mainNav .nav-link:hover {
+    color: $accent-hi;
+  }
+  #mainNav .nav-link:active {
+    color: $accent-hi;
+  }
+  #mainNav.navbar-shrink {
+    background-color: $surface-300;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    color: $text-secondary;
+    &:hover{
+      color: $accent-hi;
+    }
+  }
+  #mainNav.navbar-shrink .nav-link {
+    color: $text-secondary;
+    padding: 1rem 1.5rem .8rem 1.5rem;
+    border-bottom: 0.25rem solid transparent;
+  }
+  #mainNav.navbar-shrink .nav-link:hover {
+    color: $accent-hi;
+  }
+  #mainNav.navbar-shrink .nav-link:active {
+    color: $accent-hi;
+  }
+  #mainNav.navbar-shrink .nav-link.active {
+    color: $accent-hi;
+    outline: none;
+    border-bottom: 0.25rem solid $accent-hi;
+  }
+}
+
+.bg-black {
+  background-color: $surface-300 !important;
+}
+
+.bg-dark {
+  background-color: $surface-100 !important;
+}
+
+.bg-primary {
+  background-color: $accent !important;
+}
+
+.text-primary {
+  color: $accent !important;
+}
+
+footer {
+  margin: 3rem 0;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.ecborder{
+  border: 1px solid $surface-600;
+}
+
+@media (max-width: 992px) {
+  .mb-mobile-2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section .card{
+  border: 0;
+  border-bottom: .25rem solid $surface-600;
+}
+
+.contact-section .card hr{
+  border: 0;
+  border-bottom: .25rem solid $surface-600;
+}
+
+.rotate-90-deg {
+  transform: rotate(90deg);
+}
+
+.rotate-180-deg{
+  transform: rotate(180deg);
+}
+
+@media (max-width: 992px) {
+  .rotate-180-deg{
+    transform: rotate(0deg);
+  }
+}
+
+select {
+  height: 38px;
+}
+
+.footer-img {
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}

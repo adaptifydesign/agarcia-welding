@@ -1,0 +1,35 @@
+# Netlify deploy configuration for agarciawelding.com
+#
+# Node version is pinned in .nvmrc, not here. Netlify gives .nvmrc precedence
+# over a NODE_VERSION set in this file, so keeping it in one place avoids a
+# silent override later. package.json "engines" is NOT read by Netlify.
+
+[build]
+  # Netlify runs `npm ci` first (package-lock.json is committed), then this.
+  # `gulp build` wipes and regenerates vendor/ from node_modules, so the
+  # deployed assets are always rebuilt rather than trusted from the repo.
+  command = "npm run build"
+
+  # The site is served from the repo root: index.html, css/, js/, img/,
+  # vendor/, robots.txt, sitemap.xml all live there.
+  #
+  # Netlify applies .gitignore rules when collecting deploy files, and this
+  # repo ignores node_modules/, so dependencies are not uploaded despite the
+  # publish directory being the root.
+  publish = "."
+
+# Security headers. Deliberately no Content-Security-Policy: the page loads
+# Google Fonts cross-origin and carries inline JSON-LD, so a CSP needs to be
+# authored and tested against those rather than guessed at.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# No Cache-Control rules on purpose. Filenames here are not fingerprinted
+# (css/agarcia-welding.min.css keeps its name across deploys), so Netlify's
+# default of revalidate-with-ETag is the correct behaviour. A long max-age on
+# img/ or css/ would leave visitors on stale assets after a deploy.

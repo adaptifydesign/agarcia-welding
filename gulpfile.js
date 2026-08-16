@@ -1,16 +1,16 @@
 "use strict";
 
 // Load plugins
-const autoprefixer = require("gulp-autoprefixer");
+// gulp-autoprefixer 10 is ESM-only; reached here via Node's require(esm) interop
+const autoprefixer = require("gulp-autoprefixer").default;
 const browsersync = require("browser-sync").create();
 const cleanCSS = require("gulp-clean-css");
-const del = require("del");
+const fs = require("fs/promises");
 const gulp = require("gulp");
 const header = require("gulp-header");
-const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const uglify = require("gulp-uglify");
 
 // Load package.json for banner
@@ -18,9 +18,9 @@ const pkg = require('./package.json');
 
 // Set the banner content
 const banner = ['/*!\n',
-  ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-  ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-  ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
+  ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+  ' * Copyright ' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+  ' * Licensed under <%= pkg.license %>\n',
   ' */\n',
   '\n'
 ].join('');
@@ -31,7 +31,9 @@ function browserSync(done) {
     server: {
       baseDir: "./"
     },
-    port: 3000
+    port: 3000,
+    open: false,
+    notify: false
   });
   done();
 }
@@ -44,31 +46,37 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-  return del(["./vendor/"]);
+  return fs.rm("./vendor/", { recursive: true, force: true });
 }
 
-// Bring third party dependencies from node_modules into vendor directory
-function modules() {
-  // Bootstrap
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
+// Bring third party dependencies from node_modules into vendor directory.
+// Copied verbatim, so read as raw buffers rather than gulp 5's default utf8.
+const asIs = { encoding: false };
+
+function bootstrap() {
+  return gulp.src('./node_modules/bootstrap/dist/**/*', asIs)
     .pipe(gulp.dest('./vendor/bootstrap'));
-  // Font Awesome CSS
-  var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
-    .pipe(gulp.dest('./vendor/fontawesome-free/css'));
-  // Font Awesome Webfonts
-  var fontAwesomeWebfonts = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*')
-    .pipe(gulp.dest('./vendor/fontawesome-free/webfonts'));
-  // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./vendor/jquery-easing'));
-  // jQuery
-  var jquery = gulp.src([
+}
+
+function jquery() {
+  return gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
-    ])
+    ], asIs)
     .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery, jqueryEasing);
 }
+
+function jqueryEasing() {
+  return gulp.src('./node_modules/jquery.easing/*.js', asIs)
+    .pipe(gulp.dest('./vendor/jquery-easing'));
+}
+
+function lity() {
+  return gulp.src('./node_modules/lity/dist/*', asIs)
+    .pipe(gulp.dest('./vendor/lity'));
+}
+
+const modules = gulp.parallel(bootstrap, jquery, jqueryEasing, lity);
 
 // CSS task
 function css() {
@@ -100,7 +108,14 @@ function js() {
       './js/*.js',
       '!./js/*.min.js'
     ])
-    .pipe(uglify())
+    // uglify-js >=3.7 rewrites function expressions to arrows by default, which
+    // would emit ES6 into a bundle whose source is ES5 and whose vendored
+    // Bootstrap 4 / jQuery 3 still target IE11. Keep the output ES5.
+    .pipe(uglify({
+      compress: {
+        arrows: false
+      }
+    }))
     .pipe(header(banner, {
       pkg: pkg
     }))

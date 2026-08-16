@@ -4,36 +4,36 @@
     <title>ec-linkedin</title>
     <desc>Created with Sketch.</desc>
     <g id="ec-linkedin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M31,11 L31,31 L11,31 L11,11 L31,11 Z M18,18 L16,18 L16,26 L18,26 L18,18 Z M21,18 L19,18 L19,26 L21,26 L21,18 Z M26,18 L22,18 L21,20 L24,20 L24,26 L26,26 L26,18 Z M18,15 L16,15 L16,17 L18,17 L18,15 Z" id="Combined-Shape" fill="#FFFFFF"></path>
-        <rect id="Rectangle" fill="#8080FF" x="2" y="38" width="14" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(9.000000, 3.000000) scale(1, -1) translate(-9.000000, -3.000000) " x="2" y="2" width="14" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="26" y="38" width="14" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(33.000000, 3.000000) scale(1, -1) translate(-33.000000, -3.000000) " x="26" y="2" width="14" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="18" y="38" width="6" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(21.000000, 3.000000) scale(1, -1) translate(-21.000000, -3.000000) " x="18" y="2" width="6" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="14" y="36" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(15.000000, 5.000000) scale(1, -1) translate(-15.000000, -5.000000) " x="14" y="4" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="26" y="36" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(27.000000, 5.000000) scale(1, -1) translate(-27.000000, -5.000000) " x="26" y="4" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="2" y="4" width="2" height="8"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(39.000000, 8.000000) scale(-1, 1) translate(-39.000000, -8.000000) " x="38" y="4" width="2" height="8"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="2" y="30" width="2" height="8"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(39.000000, 34.000000) scale(-1, 1) translate(-39.000000, -34.000000) " x="38" y="30" width="2" height="8"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="4" y="10" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(37.000000, 11.000000) scale(-1, 1) translate(-37.000000, -11.000000) " x="36" y="10" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="4" y="30" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(37.000000, 31.000000) scale(-1, 1) translate(-37.000000, -31.000000) " x="36" y="30" width="2" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="14" y="34" width="14" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(21.000000, 7.000000) scale(1, -1) translate(-21.000000, -7.000000) " x="14" y="6" width="14" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="30" y="34" width="6" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(33.000000, 7.000000) scale(1, -1) translate(-33.000000, -7.000000) " x="30" y="6" width="6" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="6" y="34" width="6" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(9.000000, 7.000000) scale(1, -1) translate(-9.000000, -7.000000) " x="6" y="6" width="6" height="2"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="6" y="10" width="2" height="10"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(35.000000, 15.000000) scale(-1, 1) translate(-35.000000, -15.000000) " x="34" y="10" width="2" height="10"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="6" y="22" width="2" height="10"></rect>
-        <rect id="Rectangle" fill="#8080FF" transform="translate(35.000000, 27.000000) scale(-1, 1) translate(-35.000000, -27.000000) " x="34" y="22" width="2" height="10"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="2" y="14" width="2" height="14"></rect>
-        <rect id="Rectangle" fill="#8080FF" x="38" y="14" width="2" height="14"></rect>
+        <path d="M31,11 L31,31 L11,31 L11,11 L31,11 Z M18,18 L16,18 L16,26 L18,26 L18,18 Z M21,18 L19,18 L19,26 L21,26 L21,18 Z M26,18 L22,18 L21,20 L24,20 L24,26 L26,26 L26,18 Z M18,15 L16,15 L16,17 L18,17 L18,15 Z" id="Combined-Shape" fill="#E9E3D6"></path>
+        <rect id="Rectangle" fill="#B3945F" x="2" y="38" width="14" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(9.000000, 3.000000) scale(1, -1) translate(-9.000000, -3.000000) " x="2" y="2" width="14" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="26" y="38" width="14" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(33.000000, 3.000000) scale(1, -1) translate(-33.000000, -3.000000) " x="26" y="2" width="14" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="18" y="38" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(21.000000, 3.000000) scale(1, -1) translate(-21.000000, -3.000000) " x="18" y="2" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="14" y="36" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(15.000000, 5.000000) scale(1, -1) translate(-15.000000, -5.000000) " x="14" y="4" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="26" y="36" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(27.000000, 5.000000) scale(1, -1) translate(-27.000000, -5.000000) " x="26" y="4" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="2" y="4" width="2" height="8"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(39.000000, 8.000000) scale(-1, 1) translate(-39.000000, -8.000000) " x="38" y="4" width="2" height="8"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="2" y="30" width="2" height="8"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(39.000000, 34.000000) scale(-1, 1) translate(-39.000000, -34.000000) " x="38" y="30" width="2" height="8"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="4" y="10" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(37.000000, 11.000000) scale(-1, 1) translate(-37.000000, -11.000000) " x="36" y="10" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="4" y="30" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(37.000000, 31.000000) scale(-1, 1) translate(-37.000000, -31.000000) " x="36" y="30" width="2" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="14" y="34" width="14" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(21.000000, 7.000000) scale(1, -1) translate(-21.000000, -7.000000) " x="14" y="6" width="14" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="30" y="34" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(33.000000, 7.000000) scale(1, -1) translate(-33.000000, -7.000000) " x="30" y="6" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="6" y="34" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(9.000000, 7.000000) scale(1, -1) translate(-9.000000, -7.000000) " x="6" y="6" width="6" height="2"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="6" y="10" width="2" height="10"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(35.000000, 15.000000) scale(-1, 1) translate(-35.000000, -15.000000) " x="34" y="10" width="2" height="10"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="6" y="22" width="2" height="10"></rect>
+        <rect id="Rectangle" fill="#B3945F" transform="translate(35.000000, 27.000000) scale(-1, 1) translate(-35.000000, -27.000000) " x="34" y="22" width="2" height="10"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="2" y="14" width="2" height="14"></rect>
+        <rect id="Rectangle" fill="#B3945F" x="38" y="14" width="2" height="14"></rect>
     </g>
 </svg>

@@ -1,3 +1,19 @@
+// Hero sub-heading. Styled to match an h3 but kept as a paragraph so the
+// page keeps a single h1 -> h2 heading outline for crawlers.
+.tagline {
+  color: $text-primary;
+  font-family: $primary-font;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.375rem;
+  letter-spacing: normal;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+}
+
 .masthead {
   position: relative;
   min-height: 35rem;

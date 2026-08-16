@@ -1,10 +1,23 @@
 .projects-section {
+  // The six service cards wrap onto two rows at lg (3-up) and three rows at
+  // md (2-up). Bootstrap 4 rows carry horizontal gutters only, so the wrapped
+  // rows sat flush against each other — measured 0px between row 1 and row 2.
+  // row-gap spaces the wrapped lines and, unlike a margin on each card, leaves
+  // no trailing gap under the final row.
+  .services-grid {
+    row-gap: 1.125rem;
+
+    @media (min-width: 993px) {
+      row-gap: 1.5rem;
+    }
+  }
+
   .featured-text {
-    color: $white;
+    color: $text-primary;
     padding: 2rem;
     @media (min-width: 320px) {
       padding: 0 0 0 2rem;
-      border-left: 0.5rem solid $primary-dark-600;
+      border-left: 0.5rem solid $surface-600;
     }
   }
   .project-text {
