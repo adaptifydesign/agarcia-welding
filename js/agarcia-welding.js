@@ -56,10 +56,14 @@
     });
   }
 
+  // Toggles a class rather than writing style.display. An inline display beats
+  // every stylesheet rule, which stopped tiles that lay themselves out (the
+  // awaiting-photo placeholders use flex centring) from keeping their own
+  // display mode once they had been filtered.
   function showCategory(category) {
     images.forEach(function(image) {
       var visible = category === 'all' || image.dataset.class === category;
-      image.style.display = visible ? 'block' : 'none';
+      image.classList.toggle('is-hidden', !visible);
     });
   }
 

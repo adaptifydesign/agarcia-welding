@@ -80,7 +80,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url(../img/gallery/gates/side-gate-5-sun-rays.png);
+  background: url(../img/gallery/gates/side-gate-5-sun-rays.jpg);
   background-position: bottom center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -342,7 +342,7 @@ a:hover {
 @keyframes bg-animation {
   0% {
     opacity: 0;
-    background: url(../img/gallery/gates/side-gate-5-sun-rays.png);
+    background: url(../img/gallery/gates/side-gate-5-sun-rays.jpg);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -352,7 +352,7 @@ a:hover {
   }
   70% {
     opacity: 0.1;
-    background: url(../img/gallery/gates/side-gate-5-sun-rays.png);
+    background: url(../img/gallery/gates/side-gate-5-sun-rays.jpg);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -360,7 +360,7 @@ a:hover {
   }
   100% {
     opacity: 0.4;
-    background: url(../img/gallery/gates/side-gate-5-sun-rays.png);
+    background: url(../img/gallery/gates/side-gate-5-sun-rays.jpg);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -484,6 +484,9 @@ a:hover {
 .gallery .gallery-container .images:focus-visible {
   outline: 2px solid #c9ab77;
   outline-offset: -2px;
+}
+.gallery .gallery-container .images.is-hidden {
+  display: none;
 }
 
 @media (max-width: 1027px) {
@@ -626,6 +629,60 @@ a:hover {
 }
 .estimate-error a {
   font-weight: 700;
+}
+
+.credentials {
+  padding: 1.25rem 1.5rem;
+  border-left: 0.25rem solid #b3945f;
+  background-color: #272420;
+}
+
+.credentials-title {
+  margin-bottom: 0.5rem;
+  color: #e9e3d6;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.credentials .credentials-lede {
+  margin-bottom: 1rem !important;
+  color: #c4bdae !important;
+}
+
+.credentials-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.375rem 1rem;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+.credentials-facts dt {
+  color: #9c9384;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.credentials-facts dd {
+  margin: 0;
+  color: #c4bdae;
+}
+@media (max-width: 575px) {
+  .credentials-facts {
+    grid-template-columns: 1fr;
+    gap: 0.125rem;
+  }
+  .credentials-facts dd {
+    margin-bottom: 0.625rem;
+  }
+  .credentials-facts dd:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sticky-call {
@@ -3268,6 +3325,29 @@ h1 {
 
 footer {
   margin: 3rem 0;
+}
+
+.footer-credentials {
+  margin-top: 0.375rem;
+  color: #9c9384 !important;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.footer-credentials .footer-sep {
+  margin: 0 0.5rem;
+  color: #b3945f;
+}
+@media (max-width: 575px) {
+  .footer-credentials .footer-sep {
+    display: none;
+  }
+  .footer-credentials span {
+    display: block;
+  }
+  .footer-credentials .footer-license {
+    margin-top: 0.25rem;
+  }
 }
 
 .img-fluid {

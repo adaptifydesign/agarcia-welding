@@ -22,7 +22,8 @@
     "start": "gulp watch",
     "build": "gulp build",
     "clean": "gulp clean",
-    "icons": "node scripts/generate-icons.js"
+    "icons": "node scripts/generate-icons.js",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "bootstrap": "^4.6.2",
@@ -42,7 +43,8 @@
     "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.77.0",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "tinify": "^1.8.3"
   },
   "engines": {
     "node": ">=20.19"

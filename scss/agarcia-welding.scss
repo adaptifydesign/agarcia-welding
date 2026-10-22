@@ -11,6 +11,7 @@
 @import 'animations.scss';
 @import 'gallery.scss';
 @import 'form.scss';
+@import 'credentials.scss';
 @import 'sticky-call.scss';
 @import 'el-castillo-design-system.scss';
 
@@ -146,6 +147,37 @@ body {
 
 footer {
   margin: 3rem 0;
+}
+
+// Footer credentials line — partnership and CSLB licence number. Set quieter
+// than the footer copy above it, but $text-muted still measures 5.54:1 on the
+// page background, so it clears AA rather than becoming fine print nobody can
+// read. `body p` colours paragraphs with !important, hence the override here.
+.footer-credentials {
+  margin-top: .375rem;
+  color: $text-muted !important;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+
+  .footer-sep {
+    margin: 0 .5rem;
+    color: $accent;
+  }
+
+  // Below this the two claims collide, so stack them and drop the separator
+  // rather than letting one word strand on its own line.
+  @media (max-width: 575px) {
+    .footer-sep {
+      display: none;
+    }
+    span {
+      display: block;
+    }
+    .footer-license {
+      margin-top: .25rem;
+    }
+  }
 }
 
 .img-fluid {

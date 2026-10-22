@@ -77,6 +77,7 @@
         overflow: hidden !important;
       }
     }
+
     // Each tile is an anchor to the full-size photo, so the images stay
     // crawlable and openable without JavaScript.
     .images {
@@ -89,6 +90,13 @@
         outline-offset: -2px;
       }
     }
+
+    // Set by the category filter. Must outrank .images, which declares its own
+    // display, so the compound selector is deliberate.
+    .images.is-hidden {
+      display: none;
+    }
+
   }
 }
 
